@@ -17,22 +17,49 @@ using namespace std;
 #define pb push_back
 int main()
 {
-    int t ;
-    long long int s,a,b,c,sum=0;
-    si(t);
-    while(t--)
+    int s,n;
+    sii(n,s);
+    int i,a[n],b[n];
+    FOR(i,n)
     {
-        sum=0;
-       cin>>s>>a>>b>>c;
-        long long int x=s/(a*c);
-        sum+=x*a+x*b;
-        if(x>0)
-        s-=x*(a*c);
-
-            sum+=s/c;
-
-
-        cout <<sum<<endl;
+        si(a[i]);
     }
+    FOR(i,n)
+    {
+        si(b[i]);
+    }
+    if(a[0] == 0)
+    {
+        cout <<"NO"<<endl;
+        return 0;
+    }
+    if(a[s-1] == 1)
+    {
+        cout <<"YES"<<endl;
+        return 0;
+    }
+    int x=0;
+    for(i = s;i<n;i++)
+    {
+        if(a[i] == b[i] && b[i]==1)
+        {
+            x=1;
+            break;
+        }
+    }
+    if(x==0)
+    {
+        cout <<"NO"<<endl;
+        return 0;
+    }
+   if(b[s-1] == 1)
+    {
+         cout <<"YES"<<endl;
+         return 0;
+    }
+     cout <<"NO"<<endl;
+
+
     return 0;
 }
+
