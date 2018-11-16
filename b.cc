@@ -1,26 +1,46 @@
+#include<iostream>
 #include<bits/stdc++.h>
+#include<cstdio>
+#include<string>
+#include<cstring>
+#include<algorithm>
+#include<set>
+#include<queue>
+#include<vector>
+#include<map>
 using namespace std;
-int main(){
-    int t,i=0,ans;
-    cin>>t;
-    while(t--){
-        int r1,c1,r2=1,c2=1;
-        ans=0;
-        i++;
-        cin>>r1>>c1;
-        for(int r2=1;r2<=8;r2++)
-        {
-            for(int c2=1;c2<=8;c2++)
-            {
-                int m=(r1-r2)*(r1-r2);
-                int n=(c1-c2)*(c1-c2);
-                m+=n;
-                if(m==5) ans++;
-            }
-        }
+#define si(a) scanf("%d",&a)
+#define sii(a,b) scanf("%d%d",&a,&b);
+#define siii(a,b,c) scanf("%d%d%d",&a,&b,&c)
+#define FOR(x,to) for(x=0;x<(to);x++)
+#define pi(a) printf("%d\n",a)
+#define pb push_back
+int main()
+{
+   int n,i,j=0,ans=0;
+   si(n);
+   int b[n],a[n];
 
-      cout << "Case "<<i<<": "<<ans<<endl;
-    }
+   FOR(i,n) {
+    si(b[i]);
+   }
+   for(i=1;i<n-1;i++)
+   {
+       if(b[i] == 0 && b[i-1] == 1 && b[i+1] == 1)
+       {
+           ans++;
+           a[j] = i;
+           b[i+1] =0;
+           b[i-1] = 0;
+           if(j > 1 && (a[j] - a[j-1] == 2)) {
+            ans--;
 
+           }
+           j++;
+
+       }
+   }
+
+   pi(ans);
     return 0;
 }
