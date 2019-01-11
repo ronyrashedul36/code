@@ -1,46 +1,56 @@
-#include<iostream>
 #include<bits/stdc++.h>
-#include<cstdio>
-#include<string>
-#include<cstring>
-#include<algorithm>
-#include<set>
-#include<queue>
-#include<vector>
-#include<map>
 using namespace std;
-#define si(a) scanf("%d",&a)
-#define sii(a,b) scanf("%d%d",&a,&b);
-#define siii(a,b,c) scanf("%d%d%d",&a,&b,&c)
-#define FOR(x,to) for(x=0;x<(to);x++)
-#define pi(a) printf("%d\n",a)
-#define pb push_back
-int main()
-{
-   int n,i,j=0,ans=0;
-   si(n);
-   int b[n],a[n];
-
-   FOR(i,n) {
-    si(b[i]);
-   }
-   for(i=1;i<n-1;i++)
-   {
-       if(b[i] == 0 && b[i-1] == 1 && b[i+1] == 1)
-       {
-           ans++;
-           a[j] = i;
-           b[i+1] =0;
-           b[i-1] = 0;
-           if(j > 1 && (a[j] - a[j-1] == 2)) {
-            ans--;
-
+int main(){
+    string s,s1;
+    int m=1,n=1,c=0,c1=1,x=0;
+    cin>>s;
+    int l = s.length();
+    for(int i=0;i<l;i++)
+    {
+        if(m==1 && s[i] == '[')
+          {
+                s1+=s[i];
+                m=0;
+                x++;
+          }
+         if(s[i] == ':' && m==0)
+           {
+               s1+=s[i];
+               n=0;
+               c=i;
+               x++;
            }
-           j++;
-
-       }
-   }
-
-   pi(ans);
+           if(m==0 && n==0)
+            break;
+    }
+    for(int i=l-1;i>c;i--)
+    {
+        if(m==0 && s[i] == ']')
+        {
+            s1+=s[i];
+            m=1;
+            x++;
+        }
+        if(m==1 && s[i] ==':')
+        {
+            s1+=s[i];
+            n=2;
+            c1=i;
+            x++;
+        }
+        if(m==1 && n==2)
+            break;
+    }
+    for(int i=c;i<c1;i++)
+    {
+        if(s[i] == '|')
+        {
+            s1+=s[i];
+        }
+    }
+    if(x==4)
+    cout <<s1.length() << endl;
+    else
+        cout << -1 << endl;
     return 0;
 }
