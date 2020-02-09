@@ -1,0 +1,29 @@
+class Solution {
+    public int minSteps(String s, String t) {
+        int ans=0;
+        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> tmap = new HashMap<>();
+        for(Character c : s.toCharArray()) 
+        {
+            map.put(c, map.getOrDefault(c, 0)+1);
+        }
+        for(Character c:t.toCharArray())
+        {
+            tmap.put(c, tmap.getOrDefault(c, 0)+1);
+        }
+         for(Character c : s.toCharArray()) 
+         {
+             if(tmap.get(c) != null && map.get(c) > tmap.get(c)){
+                 ans+=Math.abs(map.get(c)-tmap.get(c));
+                 tmap.put(c, map.get(c));
+             }
+             if(tmap.get(c)==null)
+             {
+                 tmap.put(c, map.get(c));
+                 ans+=map.get(c);
+             }
+         }
+        
+        return ans;
+    }
+}
