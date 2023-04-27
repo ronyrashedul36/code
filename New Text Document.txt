@@ -1,0 +1,280 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+	<title></title>
+
+	<style>
+		@page {
+			mso-page-orientation: portrait;
+			size: 21cm 29.7cm;
+			margin: 1cm 1cm 1cm 1cm;
+		}
+
+		@page Section1 {
+			mso-header-margin: .5in;
+			mso-footer-margin: .5in;
+			mso-header: h1;
+			mso-footer: f1;
+		}
+
+		div.Section1 {
+			page: Section1;
+		}
+
+		table#hrdftrtbl {
+			margin: 0in 0in 0in 900in;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+		}
+
+		p.MsoFooter,
+		li.MsoFooter,
+		div.MsoFooter {
+			margin: 0in;
+			margin-bottom: .0001pt;
+			mso-pagination: widow-orphan;
+			tab-stops: center 3.0in right 6.0in;
+			font-size: 12.0pt;
+		}
+	</style>
+
+</head>
+
+<body>
+	
+<div class="Section1">
+	<table id='hrdftrtbl' border='0' cellspacing='0' cellpadding='0'>
+	<tr>
+		<td>
+		<div style='mso-element:header' id=h1>
+			<!-- HEADER-tags -->
+			<div class="row">
+				<div>
+					<table>
+						<tr>
+							<td>
+								<img src="<?php echo base_url() ?>images/images.jpg" width="100" height="100" alt="">
+							</td>
+							<td>
+								<p style="position: absolute; top: 0; left: 0;"><b></b>Bangladesh Agricultural Research Council</p>
+								<p style="position: absolute; top: 0px; left: 0;">Digital Archive</p>
+							</td>
+						</tr>
+					</table>
+					
+					
+				</div>
+			</div>
+			<hr>
+			<!-- end HEADER-tags -->
+		</div>
+		
+		</td>
+	</tr>
+    <tr>
+		<td>
+		<div style='mso-element:footer' id=f1>
+				<div class="row">
+					<table>
+						<tr> <td>
+							<span style='position:relative;z-index:-1'>
+							<!-- FOOTER-tags -->
+								Develop and Maintain by Computer & GIS Unit </td>
+								<td><p class="MsoFooter" style="text-align: right;">
+									<span style='mso-tab-count:2'></span>
+									Page 
+									<span style='mso-field-code: PAGE; text-align: right;'></span>
+								</p></td>
+								<!-- end FOOTER-tags -->
+							</span>
+						</tr>
+					</table>
+				</div>
+		</div>
+		</td>
+	</tr>
+	</table>
+</div>
+<table border="0">
+    
+        <tr>
+            <th><b>Id</b></th>
+            <th><b>name</b></th>
+            <th><b>email</b></th>
+        </tr>
+       
+            <?php foreach ($employees as $employee) { ?>
+                <tr>
+                    <td><?php echo $employee['id']; ?></td>
+                    <td><?php echo $employee['name']; ?></td>
+                    <td><?php echo $employee['email']; ?></td>
+                </tr>
+            <?php } ?>
+       
+    </table>
+
+
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        body{
+background:#eee;
+margin-top:20px;
+}
+.text-danger strong {
+        	color: #9f181c;
+		}
+		.receipt-main {
+			background: #ffffff none repeat scroll 0 0;
+			border-bottom: 12px solid #333333;
+			border-top: 12px solid #9f181c;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			padding: 40px 30px !important;
+			position: relative;
+			box-shadow: 0 1px 21px #acacac;
+			color: #333333;
+			font-family: open sans;
+		}
+		.receipt-main p {
+			color: #333333;
+			font-family: open sans;
+			line-height: 1.42857;
+		}
+		.receipt-footer h1 {
+			font-size: 15px;
+			font-weight: 400 !important;
+			margin: 0 !important;
+		}
+		.receipt-main::after {
+			background: #414143 none repeat scroll 0 0;
+			content: "";
+			height: 5px;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: -13px;
+		}
+		.receipt-main thead {
+			background: #414143 none repeat scroll 0 0;
+		}
+		.receipt-main thead th {
+			color:#fff;
+		}
+		.receipt-right h5 {
+			font-size: 16px;
+			font-weight: bold;
+			margin: 0 0 7px 0;
+		}
+		.receipt-right p {
+			font-size: 12px;
+			margin: 0px;
+		}
+		.receipt-right p i {
+			text-align: center;
+			width: 18px;
+		}
+		.receipt-main td {
+			padding: 9px 20px !important;
+		}
+		.receipt-main th {
+			padding: 13px 20px !important;
+		}
+		.receipt-main td {
+			font-size: 13px;
+			font-weight: initial !important;
+		}
+		.receipt-main td p:last-child {
+			margin: 0;
+			padding: 0;
+		}	
+		.receipt-main td h2 {
+			font-size: 20px;
+			font-weight: 900;
+			margin: 0;
+			text-transform: uppercase;
+		}
+		.receipt-header-mid .receipt-left h1 {
+			font-weight: 100;
+			margin: 34px 0 0;
+			text-align: right;
+			text-transform: uppercase;
+		}
+		.receipt-header-mid {
+			margin: 24px 0;
+			overflow: hidden;
+		}
+		
+		#container {
+			background-color: #dcdcdc;
+		}
+    </style>
+</head>
+<body>
+
+<div class="col-md-12">   
+ <div class="row">
+		
+        <div class="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+            <div class="row">
+    			<div class="receipt-header">
+					<div class="col-xs-6 col-sm-6 col-md-6">
+						<div class="receipt-left">
+							
+                            <img src="<?php echo base_url() ?>images/images.jpg" alt="nothing">
+						</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 text-right">
+						<div>
+							<h5 text-align: right;>Company Name.</h5>
+							<p>+1 3649-6589 <i class="fa fa-phone"></i></p>
+							<p>company@gmail.com <i class="fa fa-envelope-o"></i></p>
+							<p>USA <i class="fa fa-location-arrow"></i></p>
+						</div>
+					</div>
+				</div>
+            </div>
+			
+			
+        </div>    
+	</div>
+</div>
+
+
+    <table border="1">
+    
+        <tr>
+            <th><b>Id</b></th>
+            <th><b>name</b></th>
+            <th><b>email</b></th>
+        </tr>
+       
+            <?php foreach ($employees as $employee) { ?>
+                <tr>
+                    <td><?php echo $employee['id']; ?></td>
+                    <td><?php echo $employee['name']; ?></td>
+                    <td><?php echo $employee['email']; ?></td>
+                </tr>
+            <?php } ?>
+       
+    </table>
+        
+</body>
+</html> -->
